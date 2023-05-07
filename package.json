@@ -1,0 +1,12 @@
+{
+  "lincese": "MIT",
+  "dependencies": {
+    "alchemy-sdk": "^2.8.2",
+    "dotenv": "^16.0.3",
+    "ethers": "5.7.2",
+    "solc": "0.8.7-fixed"
+  },
+  "scripts": {
+    "compile": "yarn solcjs --bin --abi --include-path node_modules/ --base-path . -o . SimpleStorage.sol"
+  }
+}
