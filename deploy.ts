@@ -1,10 +1,10 @@
-const ethers = require("ethers")
-const fs = require("fs-extra")
-require("dotenv").config()
+import { ethers } from "ethers"
+import * as fs from "fs-extra"
+import "dotenv/config"
 
 async function main() {
-    const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_SERVER)
-    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider)
+    const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_SERVER!)
+    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY!, provider)
     // const encryptedJson = fs.readFileSync("./.encryptedKey.json", "utf8")
     // let wallet = new ethers.Wallet.fromEncryptedJsonSync(encryptedJson, process.env.PRIVATE_KEY_PASSWORD)
     await wallet.connect(provider)
